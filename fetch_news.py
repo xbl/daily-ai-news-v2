@@ -263,6 +263,15 @@ def main():
     all_entries["The Verge AI"] = tv_entries
     print(f"    -> 获取 {len(tv_entries)} 条")
 
+    # Martin Fowler
+    print("  [Martin Fowler] 抓取 Atom...")
+    mf_entries = fetch_rss(
+        "https://martinfowler.com/feed.atom",
+        "Martin Fowler"
+    )
+    all_entries["Martin Fowler"] = mf_entries
+    print(f"    -> 获取 {len(mf_entries)} 条")
+
     # 生成 Markdown
     today_str = datetime.now(CHINA_TZ).strftime("%Y-%m-%d")
     content = generate_markdown(all_entries)
