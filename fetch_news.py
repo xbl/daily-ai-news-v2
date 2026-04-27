@@ -115,7 +115,7 @@ def fetch_hackernews() -> list:
     entries = []
     try:
         query = " OR ".join(HN_KEYWORDS[:5])
-        url = f"https://hn.algolia.com/api/v1/search?tags=front_page&query={urllib.parse.quote(query)}&hitsPerPage=15"
+        url = f"https://hn.algolia.com/api/v1/search?tags=front_page&query={urllib.parse.quote(query)}&hitsPerPage=30"
         req = urllib.request.Request(url, headers={"User-Agent": "Daily-AI-News/1.0"})
         with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read().decode("utf-8"))
