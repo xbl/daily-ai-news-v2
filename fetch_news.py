@@ -7,11 +7,14 @@
 
 import urllib.request
 import urllib.parse
+import urllib.error
 import xml.etree.ElementTree as ET
 import json
 import re
+import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+import os
 
 # ========== 配置 ==========
 REPO_PATH = Path(__file__).parent
