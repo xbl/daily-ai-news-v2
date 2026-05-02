@@ -275,6 +275,15 @@ def main():
     all_entries["Martin Fowler"] = mf_entries
     print(f"    -> 获取 {len(mf_entries)} 条")
 
+    # Annie Vella
+    print("  [Annie Vella] 抓取 RSS...")
+    av_entries = fetch_rss(
+        "https://annievella.com/index.xml",
+        "Annie Vella"
+    )
+    all_entries["Annie Vella"] = av_entries
+    print(f"    -> 获取 {len(av_entries)} 条")
+
     # 生成 Markdown
     today_str = datetime.now(CHINA_TZ).strftime("%Y-%m-%d")
     content = generate_markdown(all_entries)
